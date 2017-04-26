@@ -17,22 +17,22 @@
             android:background="@color/user_picture_chooser_background"/>
 
         <ImageView
+            android:id="@+id/basic_info_edit_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/user_picture_jumbo_height"
             android:src="@drawable/user_ghost"
             android:scaleType="fitCenter"
             android:contentDescription="@string/choose_user_picture"/>
 
-        <ImageButton
-            android:id="@+id/basic_info_edit_image"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="@dimen/spacing_small"
             android:layout_marginRight="@dimen/spacing_small"
-            android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_photo_camera_white_24dp"
             android:contentDescription="@null"/>
+
 
     </FrameLayout>
 

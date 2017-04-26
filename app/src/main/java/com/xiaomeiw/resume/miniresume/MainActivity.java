@@ -74,14 +74,14 @@ public class MainActivity extends AppCompatActivity {
     private void setupUI() {
         setContentView(R.layout.activity_main);
 
-        ImageButton edit_basicinfo_btn = (ImageButton) findViewById(R.id.edit_basic_info);
+  /*      ImageButton edit_basicinfo_btn = (ImageButton) findViewById(R.id.edit_basic_info);
         edit_basicinfo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BasicInfoEditActivity.class);
                 startActivityForResult(intent, REQ_CODE_EDIT_BASIC_INFO);
             }
-        });
+        });*/
 
         ImageButton add_education_btn = (ImageButton) findViewById(R.id.add_education_btn);
         add_education_btn.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +137,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             userPicture.setImageResource(R.drawable.user_ghost);
         }
+
+        findViewById(R.id.edit_basic_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BasicInfoEditActivity.class);
+                intent.putExtra(BasicInfoEditActivity.KEY_BASIC_INFO, basicInfo);
+                startActivityForResult(intent, REQ_CODE_EDIT_BASIC_INFO);
+            }
+        });
     }
 
     @Override
